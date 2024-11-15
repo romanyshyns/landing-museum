@@ -1,0 +1,61 @@
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tables-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline() {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 34px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+  }
+}
+
+@mixin font-default {
+  font-family: "IBM Plex Sans", Arial, sans-serif;
+  font-weight: 500;
+  color: #fff;
+  line-height: 16px;
+  font-size: 16px;
+}
+
+@mixin font-montserrat {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+@mixin page-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+
+    column-gap: 30px;
+  }
+}

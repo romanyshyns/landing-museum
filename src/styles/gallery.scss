@@ -1,0 +1,70 @@
+.gallery {
+  display: flex;
+
+  @include content-padding-inline;
+
+  @include on-desktop {
+    @include page-grid;
+
+    row-gap: 30px;
+  }
+
+  &__title {
+    text-align: center;
+    margin: 183px 0 40px;
+
+    @include on-tablet {
+      margin: 208px 0 48px;
+    }
+
+    @include on-desktop {
+      margin: 302px 0 56px;
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    @include on-desktop {
+      @include hover (transform, scale(1.05));
+
+      width: 100%;
+      height: 100%;
+      justify-self: center;
+    }
+
+    &--first-desktop {
+      @include on-desktop {
+        display: block;
+        grid-column: 1 /5;
+      }
+    }
+
+    &--second {
+      @include on-desktop {
+        display: block;
+        grid-column: 5/13;
+      }
+    }
+
+    &--third {
+      @include on-desktop {
+        display: block;
+        grid-column: 1 / 9;
+      }
+    }
+
+    &--fourth {
+      @include on-desktop {
+        display: block;
+        grid-column: 9 /13;
+      }
+    }
+  }
+}
+
+.gallery__container {
+  @include on-desktop {
+    margin-bottom: 200px;
+  }
+}

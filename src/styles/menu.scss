@@ -1,0 +1,103 @@
+.menu {
+  background-color: $aside;
+  color: $white;
+  overflow: auto;
+  height: 399px;
+  min-width: 320px;
+
+  @include on-tablet {
+    height: 225px;
+  }
+
+  @include on-desktop {
+    height: 233px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    margin-bottom: 24px;
+
+    @include on-tablet {
+      margin-right: 38px;
+    }
+
+    @include on-desktop {
+      gap: 102px;
+      margin-right: 102px;
+    }
+  }
+
+  &__working-schedule {
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      min-width: 158px;
+      margin-inline: 38px;
+    }
+
+    @include on-desktop {
+      margin-left: 102px;
+      white-space: nowrap;
+    }
+  }
+
+  &__working-schedule-title {
+    @include font-default;
+
+    margin: 24px 0 20px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+
+    @include on-tablet {
+      margin: 0;
+    }
+  }
+
+  &__working-schedule-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 600;
+  }
+
+  &__line {
+    border-bottom: 1px solid $white;
+
+    @include on-tablet {
+      border-right: 1px solid $white;
+      height: 145px;
+    }
+  }
+
+  &__working-sedule-item-thin {
+    font-weight: 400;
+    width: 144px;
+  }
+}
+
+.container {
+  @include on-tablet {
+    display: flex;
+  }
+}
+
+.menu__holidays {
+  margin-top: 16px;
+  text-align: left;
+
+  @include on-tablet {
+    min-width: 144px;
+    max-width: 144px;
+    margin-top: 40px;
+  }
+
+  @include on-desktop {
+    width: 170px;
+  }
+}

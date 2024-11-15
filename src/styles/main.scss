@@ -1,3 +1,44 @@
-body {
+.main {
   margin: 0;
+  padding: 0;
+
+  &__container {
+    @include on-tablet {
+      @include content-padding-inline;
+    }
+
+    @include on-desktop {
+      padding: 0;
+    }
+  }
+
+  &__content {
+    @include content-padding-inline;
+
+    @include on-tablet {
+      padding: 0;
+    }
+
+    @include on-desktop {
+      @include content-padding-inline;
+
+      margin-top: 200px;
+    }
+  }
+
+  &__title {
+    @include content-padding-inline;
+
+    text-align: center;
+    margin: 253px 0 40px;
+
+    @include on-tablet {
+      text-align: left;
+      margin: 88px 0 48px;
+    }
+
+    @include on-desktop {
+      margin: 200px 0 56px;
+    }
+  }
 }
